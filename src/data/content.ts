@@ -1,178 +1,161 @@
-export type RitualCategory = "hair" | "skin" | "grooming" | "bridal";
-
-export interface Ritual {
-  id: string;
-  category: RitualCategory;
-  badge: string;
-  image: string;
-  title: string;
-  duration: string;
-  description: string;
-  price: string;
-  cta: string;
+export interface ServiceItem {
+  name: string;
+  price?: string;
 }
 
-export const rituals: Ritual[] = [
-  {
-    id: "french-glossing",
-    category: "hair",
-    badge: "Signature",
-    image:
-      "https://images.unsplash.com/photo-1629397685944-7073f5589754?auto=format&fit=crop&w=900&q=80",
-    title: "French Glossing & Balayage",
-    duration: "120m",
-    description:
-      "Bespoke freehand lightening followed by nourishing chromatic gloss for multidimensional shine and zero root line.",
-    price: "From ₹4,500",
-    cta: "Book Now",
-  },
-  {
-    id: "hair-botox",
-    category: "hair",
-    badge: "Restorative",
-    image:
-      "https://images.unsplash.com/photo-1717160675489-7779f2c91999?auto=format&fit=crop&w=900&q=80",
-    title: "Cysteine & Hair Botox Therapy",
-    duration: "90m",
-    description:
-      "Formaldehyde-free intensive nano-infusion that fills hair cortex fissures, banishing humidity frizz for up to 4 months.",
-    price: "From ₹5,800",
-    cta: "Book Now",
-  },
-  {
-    id: "hydrafacial",
-    category: "skin",
-    badge: "Dermal Tech",
-    image:
-      "https://images.unsplash.com/photo-1643684391140-c5056cfd3436?auto=format&fit=crop&w=900&q=80",
-    title: "Hydra-Facial Infusion 360°",
-    duration: "60m",
-    description:
-      "Vortex suction extraction followed by deep hyaluronic peptide saturation and custom LED phototherapy for instant glow.",
-    price: "From ₹3,900",
-    cta: "Book Now",
-  },
-  {
-    id: "gold-facial",
-    category: "skin",
-    badge: "Luminance",
-    image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=80",
-    title: "24K Gold Luminance Facial",
-    duration: "75m",
-    description:
-      "Pure elemental gold micro-foils combined with botanical collagen boosters to reduce cellular fatigue and plump fine lines.",
-    price: "From ₹4,200",
-    cta: "Book Now",
-  },
-  {
-    id: "beard-cut",
-    category: "grooming",
-    badge: "Executive",
-    image:
-      "https://images.unsplash.com/photo-1599011176306-4a96f1516d4d?auto=format&fit=crop&w=900&q=80",
-    title: "Men's Signature Beard & Cut",
-    duration: "45m",
-    description:
-      "Scissor architecture, steam towel infusion, organic eucalyptus oil beard softening, and invigorating head massage.",
-    price: "From ₹1,200",
-    cta: "Book Now",
-  },
-  {
-    id: "scalp-detox",
-    category: "grooming",
-    badge: "Wellness",
-    image:
-      "https://images.unsplash.com/photo-1757066033634-bbbf874ce525?auto=format&fit=crop&w=900&q=80",
-    title: "Scalp Charcoal Detox Therapy",
-    duration: "50m",
-    description:
-      "Exfoliating bamboo charcoal scrub to clear pollution buildup, stimulate microcirculation, and promote thicker hair growth.",
-    price: "From ₹1,650",
-    cta: "Book Now",
-  },
-  {
-    id: "bridal-glow",
-    category: "bridal",
-    badge: "Couture",
-    image:
-      "https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?auto=format&fit=crop&w=900&q=80",
-    title: "Royal Bridal Glow Suite",
-    duration: "180m",
-    description:
-      "High-definition airbrush makeup, bespoke bridal updo artistry, pure silk saree draping, and customized pearl body glow.",
-    price: "From ₹14,500",
-    cta: "Inquire Suite",
-  },
-  {
-    id: "fusio-dose",
-    category: "hair",
-    badge: "Kérastase",
-    image:
-      "https://images.unsplash.com/photo-1779492907379-0894f8807533?auto=format&fit=crop&w=900&q=80",
-    title: "Kérastase Fusio-Dose Ritual",
-    duration: "35m",
-    description:
-      "Custom concentrated booster mixed fresh before your eyes to resolve dullness, breakage, or color fade.",
-    price: "From ₹1,800",
-    cta: "Book Now",
-  },
-];
-
-export const ritualFilters: { id: "all" | RitualCategory; label: string }[] = [
-  { id: "all", label: "All Rituals" },
-  { id: "hair", label: "Hair Couture" },
-  { id: "skin", label: "Dermal Therapies" },
-  { id: "grooming", label: "Men's Executive" },
-  { id: "bridal", label: "Bridal Suite" },
-];
-
-export interface Stylist {
+export interface ServiceCategory {
   id: string;
+  label: string;
+  items: ServiceItem[];
+}
+
+export const serviceMenu: ServiceCategory[] = [
+  {
+    id: "hair-care-men",
+    label: "Hair Care – Men's",
+    items: [
+      { name: "Men's Hair Cut" },
+      { name: "Men's Hair Wash with Style" },
+      { name: "Beard Trim" },
+      { name: "Shave" },
+      { name: "Hair Colour" },
+      { name: "Hair Highlights" },
+    ],
+  },
+  {
+    id: "hair-care-women",
+    label: "Hair Care – Women's",
+    items: [
+      { name: "Hair Cut" },
+      { name: "Kid's Hair Cut" },
+      { name: "Hair Wash & Conditioner" },
+      { name: "Hair Wash & Blow Dry" },
+      { name: "Straight Blow Dry" },
+      { name: "Soft Curls Blow Dry" },
+      { name: "Tong Curls Hair Style" },
+      { name: "Hair Ironing" },
+    ],
+  },
+  {
+    id: "hair-colour-women",
+    label: "Hair Colour – Women's",
+    items: [
+      { name: "Women's Global Hair Colour" },
+      { name: "Global Highlights" },
+      { name: "Crown Area" },
+      { name: "Root Touch-up" },
+      { name: "Highlights (Per Streak)" },
+    ],
+  },
+  {
+    id: "keratin-therapy",
+    label: "Keratin Therapy – Women's",
+    items: [{ name: "Keratin Therapy" }],
+  },
+  {
+    id: "hair-spa",
+    label: "Hair Spa – Men's & Women's",
+    items: [
+      { name: "Hair Spa (Men's)" },
+      { name: "Dandruff Treatment" },
+      { name: "L'Oréal Spa (Women's)" },
+      { name: "Keratin Spa" },
+      { name: "Dandruff Treatment (Women's)" },
+      { name: "Hair Fall Treatment (Women's)" },
+    ],
+  },
+  {
+    id: "massage",
+    label: "Massage Therapy – Men's & Women's",
+    items: [
+      { name: "Head Massage" },
+      { name: "Head Massage (Women's)" },
+      { name: "Shoulder Massage" },
+      { name: "Foot Massage (30 mins)" },
+    ],
+  },
+  {
+    id: "pedicure-manicure",
+    label: "Pedicure & Manicure",
+    items: [
+      { name: "Pedicure Basic" },
+      { name: "Manicure Basic" },
+      { name: "Pedicure Spa" },
+      { name: "Manicure Spa" },
+      { name: "Pedicure Spa Raga" },
+      { name: "Manicure" },
+    ],
+  },
+  {
+    id: "facials",
+    label: "Facials",
+    items: [
+      { name: "Fruit Facial" },
+      { name: "Herbal Facial" },
+      { name: "Nature's Gold" },
+      { name: "VLCC Gold" },
+      { name: "Nature's Whitening" },
+      { name: "VLCC Whitening" },
+      { name: "Pearl Whitening" },
+      { name: "Nature's Banana" },
+      { name: "Nature's Papaya" },
+    ],
+  },
+  {
+    id: "advance-facial",
+    label: "Advance Facial",
+    items: [
+      { name: "Nature's Acne Facial" },
+      { name: "Shahnaz Husain Whitening Facial" },
+      { name: "Raga Whitening" },
+      { name: "Lotus Whitening" },
+      { name: "O3 Whitening" },
+    ],
+  },
+  {
+    id: "bikini-wax-brazilian",
+    label: "Bikini Wax & Brazilian",
+    items: [{ name: "Bikini Wax" }, { name: "Brazilian" }],
+  },
+  {
+    id: "cleanup",
+    label: "Cleanup",
+    items: [
+      { name: "Fruit Cleanup" },
+      { name: "Nature's Gold" },
+      { name: "O3 Cleanup" },
+      { name: "Vitamin C" },
+    ],
+  },
+  {
+    id: "threading",
+    label: "Threading",
+    items: [
+      { name: "Eyebrows" },
+      { name: "Forehead" },
+      { name: "Upper Lips" },
+      { name: "Chin" },
+      { name: "Sides / Cheeks" },
+      { name: "Full Face" },
+    ],
+  },
+];
+
+export interface Owner {
   name: string;
-  credential: string;
-  role: string;
-  rating: string;
+  title: string;
   bio: string;
   tags: string[];
   image: string;
 }
 
-export const stylists: Stylist[] = [
-  {
-    id: "arjun",
-    name: "Arjun Verma",
-    credential: "Vidal Sassoon London Trained",
-    role: "Creative Art Director • 12+ Years Experience",
-    rating: "4.98",
-    bio: "Specializes in precision geometric dry cutting, European balayage transitions, and corrective color sculpting.",
-    tags: ["Balayage", "Precision Cuts"],
-    image:
-      "https://images.unsplash.com/photo-1717700921740-a1440f3b89a4?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "meera",
-    name: "Meera Rao",
-    credential: "CIDESCO Certified Aesthetician",
-    role: "Senior Dermal Specialist • 9+ Years Experience",
-    rating: "5.0",
-    bio: "Expert in holistic barrier repair, non-invasive collagen induction, and bride radiance regimes with clinical botanicals.",
-    tags: ["HydraFacials", "Anti-Pigment"],
-    image:
-      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "zoya",
-    name: "Zoya Khan",
-    credential: "Celebrity Bridal Stylist",
-    role: "Head of Bridal Couture • 8+ Years Experience",
-    rating: "4.95",
-    bio: "Master of flawless HD airbrush textures, contemporary floral hair braiding, and soft glam trousseau palettes.",
-    tags: ["HD Bridal", "Airbrush"],
-    image:
-      "https://images.unsplash.com/photo-1653130029149-9109b115ab9a?auto=format&fit=crop&w=800&q=80",
-  },
-];
+export const owner: Owner = {
+  name: "Murshad Ali",
+  title: "Owner & Master Stylist",
+  bio: "With years of hands-on experience across cutting, coloring, and skincare, Murshad Ali leads the Master Salon team with a personal, detail-focused approach — making sure every client leaves looking and feeling their best.",
+  tags: ["Hair Styling", "Colour Specialist", "Client Care"],
+  image: "/ownerimage.png",
+};
 
 export interface Testimonial {
   id: string;

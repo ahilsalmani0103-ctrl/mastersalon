@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Rituals from "./components/Rituals";
 import Atmosphere from "./components/Atmosphere";
-import Stylists from "./components/Stylists";
+import Owner from "./components/Owner";
 import Testimonials from "./components/Testimonials";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
@@ -19,7 +19,7 @@ export default function App() {
           <Hero />
           <Rituals />
           <Atmosphere />
-          <Stylists />
+          <Owner />
           <Testimonials />
           <Location />
         </div>

@@ -28,7 +28,7 @@ const ritualLinks = [
 
 const loungeLinks = [
   { label: "Our Atmosphere", href: "#atmosphere" },
-  { label: "Master Stylists", href: "#stylists" },
+  { label: "Meet The Owner", href: "#owner" },
   { label: "Curated Packages", href: "#curated-rituals" },
   { label: "Client Journals", href: "#client-stories" },
   { label: "Valet & Directions", href: "#location-hours" },
