@@ -74,9 +74,6 @@ export default function Location() {
                     Salon &amp; Sanctuary Hours
                   </span>
                   <p className="font-body-md text-body-md text-on-surface-variant">Monday to Sunday: 9:00 AM – 9:30 PM</p>
-                  <span className="font-caption text-caption text-on-surface-variant">
-                    Open on all bank holidays. Valet attendants stationed 9 AM onwards.
-                  </span>
                 </div>
               </div>
               <div className="flex items-start gap-space-sm">
