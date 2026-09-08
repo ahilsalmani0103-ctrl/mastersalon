@@ -50,7 +50,11 @@ export const serviceMenu: ServiceCategory[] = [
   {
     id: "keratin-therapy",
     label: "Keratin Therapy – Women's",
-    items: [{ name: "Keratin Therapy" }],
+    items: [
+      { name: "Keratin Therapy" },
+      { name: "Hair Botox Treatment" },
+      { name: "Nanoplastia Treatment" },
+    ],
   },
   {
     id: "hair-spa",
@@ -218,6 +222,15 @@ export const galleryImages: { alt: string; image: string }[] = [
     image:
       "https://images.unsplash.com/photo-1552956363-eb0a782bdfee?auto=format&fit=crop&w=700&q=80",
   },
+];
+
+export const colourGallery: { alt: string; image: string }[] = [
+  { alt: "Hair color transformation before and after", image: "/colour/colour-1.jpeg" },
+  { alt: "Colorist applying premium hair color at the salon", image: "/colour/colour-2.jpeg" },
+  { alt: "Highlights and fashion shades application close-up", image: "/colour/colour-3.jpeg" },
+  { alt: "Client relaxing during a premium hair color service", image: "/colour/colour-4.jpeg" },
+  { alt: "Global hair color service in progress", image: "/colour/colour-5.jpeg" },
+  { alt: "Balayage and ombre color application close-up", image: "/colour/colour-6.jpeg" },
 ];
 
 export const heroImage =
