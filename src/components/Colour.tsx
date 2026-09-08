@@ -18,9 +18,9 @@ export default function Colour() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-space-md">
           {colourGallery.map((item, index) => (
             <Reveal key={item.image} delayMs={(index % 3) * 100}>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low flex items-center justify-center">
                 <img
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   alt={item.alt}
                   src={item.image}
                   loading="lazy"
