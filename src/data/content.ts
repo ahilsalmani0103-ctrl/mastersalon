@@ -88,7 +88,7 @@ export const serviceMenu: ServiceCategory[] = [
   },
   {
     id: "facials",
-    label: "Facials",
+    label: "Facials – Men's & Women's",
     items: [
       { name: "Fruit Facial" },
       { name: "Herbal Facial" },
@@ -103,13 +103,14 @@ export const serviceMenu: ServiceCategory[] = [
   },
   {
     id: "advance-facial",
-    label: "Advance Facial",
+    label: "Advance Facial – Men's & Women's",
     items: [
       { name: "Nature's Acne Facial" },
       { name: "Shahnaz Husain Whitening Facial" },
       { name: "Raga Whitening" },
       { name: "Lotus Whitening" },
       { name: "O3 Whitening" },
+      { name: "HydraFacial" },
     ],
   },
   {
@@ -221,9 +222,6 @@ export const galleryImages: { alt: string; image: string }[] = [
 
 export const heroImage =
   "https://images.unsplash.com/photo-1706629503650-cade709d15e3?auto=format&fit=crop&w=1600&q=80";
-
-export const atmosphereImage =
-  "https://images.unsplash.com/photo-1773904215697-e6c21fc27ac2?auto=format&fit=crop&w=1400&q=80";
 
 export const phoneDisplay = "+91 77957 46616";
 export const phoneTel = "tel:+917795746616";

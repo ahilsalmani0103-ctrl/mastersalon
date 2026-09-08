@@ -1,12 +1,13 @@
 import Icon from "./Icon";
 import InstagramIcon from "./InstagramIcon";
+import Reveal from "./Reveal";
 import { galleryImages, instagramHandle, instagramUrl, testimonials } from "../data/content";
 
 export default function Testimonials() {
   return (
     <section className="w-full bg-surface-container-low py-space-4xl px-container-padding-mobile lg:px-container-padding-desktop" id="client-stories">
       <div className="max-w-[1440px] mx-auto flex flex-col gap-space-3xl">
-        <div className="text-center max-w-2xl mx-auto flex flex-col gap-space-xs">
+        <Reveal className="text-center max-w-2xl mx-auto flex flex-col gap-space-xs">
           <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase font-semibold">
             Verified Endorsements
           </span>
@@ -14,10 +15,14 @@ export default function Testimonials() {
           <p className="font-body-md text-body-md text-on-surface-variant">
             From corporate leaders in Manyata Tech Park to brides from Sadashivanagar and Jakkur.
           </p>
-        </div>
+        </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-          {testimonials.map((review) => (
-            <div key={review.id} className="p-space-lg rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm">
+          {testimonials.map((review, index) => (
+            <Reveal
+              key={review.id}
+              delayMs={index * 100}
+              className="p-space-lg rounded-xl bg-surface-container-lowest flex flex-col justify-between shadow-sm"
+            >
               <div className="flex flex-col gap-space-sm">
                 <div className="flex text-primary">
                   {Array.from({ length: review.rating }).map((_, i) => (
@@ -35,10 +40,10 @@ export default function Testimonials() {
                   <span className="font-caption text-caption text-on-surface-variant">{review.location}</span>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
-        <div className="flex flex-col gap-space-lg pt-space-lg">
+        <Reveal className="flex flex-col gap-space-lg pt-space-lg">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
             <div className="flex items-center gap-space-xs">
               <Icon name="photo_camera" className="text-primary" />
@@ -78,7 +83,7 @@ export default function Testimonials() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

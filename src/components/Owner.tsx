@@ -1,10 +1,11 @@
+import Reveal from "./Reveal";
 import { owner, reserveWaLink } from "../data/content";
 
 export default function Owner() {
   return (
     <section className="w-full py-space-4xl px-container-padding-mobile lg:px-container-padding-desktop" id="owner">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-space-3xl items-stretch">
-        <div className="w-full rounded-xl overflow-hidden">
+        <Reveal direction="left" className="w-full rounded-xl overflow-hidden">
           <img
             className="w-full h-full max-h-[640px] object-cover"
             alt={owner.name}
@@ -12,8 +13,12 @@ export default function Owner() {
             loading="lazy"
             decoding="async"
           />
-        </div>
-        <div className="flex flex-col justify-center gap-space-md bg-surface-container-low rounded-xl p-space-2xl">
+        </Reveal>
+        <Reveal
+          direction="right"
+          delayMs={120}
+          className="flex flex-col justify-center gap-space-md bg-surface-container-low rounded-xl p-space-2xl"
+        >
           <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase font-semibold">
             Meet The Owner
           </span>
@@ -40,7 +45,7 @@ export default function Owner() {
               Book with {owner.name}
             </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

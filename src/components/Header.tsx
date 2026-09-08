@@ -6,7 +6,6 @@ const navLinks = [
   { label: "Services", full: "Services", href: "#curated-rituals" },
   { label: "Owner", full: "Meet The Owner", href: "#owner" },
   { label: "Bridal", full: "Bridal & Couture", href: "#curated-rituals" },
-  { label: "Atmosphere", full: "Atmosphere", href: "#atmosphere" },
   { label: "Reviews", full: "Client Stories", href: "#client-stories" },
   { label: "Visit Us", full: "Location & Hours", href: "#location-hours" },
 ];

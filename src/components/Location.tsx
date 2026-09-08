@@ -2,6 +2,7 @@ import Icon from "./Icon";
 import WhatsAppIcon from "./WhatsAppIcon";
 import InstagramIcon from "./InstagramIcon";
 import FacebookIcon from "./FacebookIcon";
+import Reveal from "./Reveal";
 import {
   addressFull,
   addressLine1,
@@ -21,7 +22,7 @@ export default function Location() {
     <section className="w-full py-space-4xl px-container-padding-mobile lg:px-container-padding-desktop" id="location-hours">
       <div className="max-w-[1440px] mx-auto flex flex-col gap-space-3xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
-          <div className="lg:col-span-6 flex flex-col gap-space-lg bg-surface-container-low p-space-xl rounded-2xl">
+          <Reveal direction="left" className="lg:col-span-6 flex flex-col gap-space-lg bg-surface-container-low p-space-xl rounded-2xl">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-space-sm">
               <div className="flex flex-col gap-space-xs">
                 <span className="font-label-caps text-label-caps text-primary tracking-widest uppercase font-semibold">
@@ -120,8 +121,8 @@ export default function Location() {
                 <span>WhatsApp Us</span>
               </a>
             </div>
-          </div>
-          <div className="lg:col-span-6 flex flex-col h-full min-h-[380px]">
+          </Reveal>
+          <Reveal direction="right" delayMs={120} className="lg:col-span-6 flex flex-col h-full min-h-[380px]">
             <a
               href={googleMapsUrl}
               target="_blank"
@@ -162,7 +163,7 @@ export default function Location() {
                 </div>
               </div>
             </a>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
